@@ -27,8 +27,10 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
-  localArray=[]
+  let localArray=[]
 
+  arr.forEach( str => localArray.push(`${str}!`)
+  )
 
   return localArray;
 };
@@ -43,8 +45,10 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
-  let localArray =[];
-  arr.fotoUpperCase();
+  let upperCaseArray =[];
+  arr.forEach(str => upperCaseArray.push(str.toUpperCase()));
+
+  return upperCaseArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,12 +63,13 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
-  return word.toUpperCase()
+  return `${word.toUpperCase()}!`
 };
 
 const speaker = (words, callback) => {
   // Solution code here...
-  const message = callback(words)
+  let message = [];
+  words.forEach(word =>  message.push(callback(word)));
   return message;
 };
 
@@ -119,12 +124,12 @@ const createList = (availableItems) => {
   // Solution code here...
   const myList = [];
 
-  availableItems.forEach( function(produce, index, array){
+  availableItems.forEach(item => {
 
-    if(availableItems.available === true) {
-      myList.push(produce.name)
+    if(item.available) {
+      myList.push(item.name)
     }
-  })
+  });
 
   return myList;
 };
@@ -145,6 +150,22 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  const outputArray = [];
+  arr.forEach( number => {
+    if(number % 3 === 0 && number % 5 === 0) {
+      outputArray.push('Fizz Buzz');
+    } 
+    else if(number % 3 === 0) {
+      outputArray.push('Fizz');
+    } 
+    else if(number % 5 === 0) {
+      outputArray.push('Buzz');
+    }
+    else if (number % 3 != 0 && number % 5 != 0 ){
+      outputArray.push(number);
+    };
+  });
+    return outputArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -198,7 +219,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
