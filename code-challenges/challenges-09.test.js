@@ -142,7 +142,7 @@ const hasChildrenValues = (arr, character) => {
   arr.forEach(profile => {
     if (profile.name === character) {
       answer = profile.children.length > 0;
-    }
+    } 
   })
   return answer;
 };
