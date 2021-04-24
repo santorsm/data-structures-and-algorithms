@@ -24,9 +24,7 @@ let starWarsPeople = [
   }
 ];
 
-const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
-}
+const sortStarWarsCharacters = (starWarsArr) => starWarsArr.sort((a,b) => parseInt(b.height) - parseInt(a.height));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -34,9 +32,7 @@ CHALLENGE 2
 Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index. 
 ------------------------------------------------------------------------------------------------ */
 
-const removeThree = (idx, arr) => {
-  // Solution code here...
-};
+const removeThree = (idx, arr) => arr.splice((2,3));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -63,12 +59,7 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  result.push(str);
-  let length = str.length
-  for(var i = 0; i < length; i++){
-    str = str.slice(1, str.length);
-    result.push(str);
-  };
+  // Solution code here...
   return result;
 };
 
@@ -80,8 +71,9 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => arr.split('');
-
+const wordsToCharList = (arr) => {
+  // Solution code here...
+};
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,9 +118,9 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  return recipe.ingredients.map(i => {
-    return i.slice(i.indexOf(' ', i.indexOf(' ') + 1) + 1, i.length);
-  })
+  let result = [];
+  // Solution code here...
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
