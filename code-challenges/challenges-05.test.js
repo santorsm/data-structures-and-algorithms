@@ -40,9 +40,7 @@ CHALLENGE 3
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
 ------------------------------------------------------------------------------------------------ */
 
-const joinArray = (arr) => {
-  // Solution code here...
-};
+const joinArray = arr => arr.join('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
