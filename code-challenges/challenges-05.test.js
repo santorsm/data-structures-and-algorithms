@@ -40,9 +40,7 @@ CHALLENGE 3
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
 ------------------------------------------------------------------------------------------------ */
 
-const joinArray = (arr) => {
-  // Solution code here...
-};
+const joinArray = (arr) => arr.join(' ');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -59,7 +57,11 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  let strPen = str.split('');
+  for(let i = 0; i < str.length; i++) {
+    strPen.splice(0,1);
+    result.push(strPen.join(''));
+  }
   return result;
 };
 
@@ -71,9 +73,7 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
+const wordsToCharList = (arr) => arr.split('');
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,7 +119,12 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let recipeArr = recipe.ingredients;
+  recipeArr.forEach(ingredient => {
+    let tempArr = ingredient.split(' ');
+    tempArr.splice(0,2);
+    result.push(tempArr.join(' '));
+  });
   return result;
 };
 
@@ -133,7 +138,12 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let recipeArr = recipe.ingredients;
+  recipeArr.forEach(ingredient => {
+    let tempArr = ingredient.split(' ');
+    tempArr.splice(0,2);
+    result.push(tempArr.join(' '));
+  });  
   return result;
 };
 
@@ -149,7 +159,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  let stepsArr = recipe.steps;
+  stepsArr.forEach(step => {
+    let tempArr = step.split(' ');
+    tempArr.splice(1);
+    result.push(tempArr.join(' '));
+  });
   return result;
 };
 
@@ -167,7 +182,9 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for(let i = arr.length; i >= 0; i--) {
+    if(arr[i] % 2 === 0) arr.splice(i, 1);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -198,7 +215,10 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 
 const totalSumCSV = (str) => {
   let total = 0;
-  // Solution code here...
+  let csvArr = str.split(',');
+  csvArr.forEach(num => {
+    total += Number(num);
+  });
   return total;
 };
 
@@ -297,7 +317,7 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
@@ -326,7 +346,7 @@ xdescribe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should add up the numbers contained within the string', () => {
     expect(totalSumCSV('1,4,5,7,2')).toStrictEqual(19);
     expect(totalSumCSV('147')).toStrictEqual(147);
