@@ -56,12 +56,9 @@ Write a function called sortNumbers that takes an array of numbers and sorts the
 HINT: Beware... JS default is "Lexical" ordering. 
 ------------------------------------------------------------------------------------------------ */
 
-const sortNumbers = (arr) => {
-  // Solution code here...
+const sortNumbers = (arr) => arr.sort((a, b) => a - b);
 
-  return arr.sort((a,b) => a - b);
 
-};  
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -144,6 +141,7 @@ const alphabetizeBetter = (arr) => {
       return 0;
     }
   }); return arr
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -154,6 +152,7 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => arr.sort((a,b) => a.length - b.length);
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
@@ -163,6 +162,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => arr.sort((a,b) => a.toString().length - b.toString().length);
+
 
 /*-----------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -184,6 +184,7 @@ const people = [
 
 const sortPeople = (arr) => arr.sort((a,b) => a.lastName > b.lastName ? 1 : -1);
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
 
@@ -196,16 +197,31 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
-  arr.sort((a,b) => {
-    if(a.lastName > b.lastName) {
+  arr.sort((a,b)=>{
+    if(a.lastName>b.lastName){
       return 1;
-    } else if (a.lastName < b.lastName){
+    }else if(a.lastName<b.lastName){
       return -1;
-    } else {
+    }else if(a.lastName===b.lastName){
+        if(a.firstName>b.firstName){
+          return 1;
+        }else if(a.firstName<b.firstName){
+          return -1;
+        }else if(a.firstName===b.firstName){
+          if(a.age>b.age){
+            return 1;
+          }else if(a.age<b.age){
+            return -1;
+          }
+        }
+    }
+    else{
       return 0;
     }
-  });
-};
+  })
+  return arr;
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 12 - Stretch Goal
@@ -243,6 +259,21 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 
 const sortSchedule = (arr) => {
   // Solution code here...
+  arr.sort((a,b)=>{
+    let aStart = parseInt(a.start);
+    let bStart = parseInt(b.start);
+    let aEnd = parseInt(a.end);
+    let bEnd = parseInt(b.end);
+
+    if(aStart===bStart){
+      return aEnd-bEnd;
+    }else{
+      return aStart-bStart;
+    }
+  });
+  sortMeetingsByDay(arr);
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -387,7 +418,7 @@ xdescribe('Testing challenge 12', () => {
   });
 });
 
-xdescribe('Testing challenge 13', () => {
+describe('Testing challenge 13', () => {
   test('It should sort meetings by when they happen', () => {
     expect(sortSchedule(meetings)).toStrictEqual([
       new Meeting('Monday', '0900', '0945'),
