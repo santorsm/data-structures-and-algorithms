@@ -8,9 +8,8 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => {
-  // Solution code here...
-};
+const maxInArray = (arr) => arr.reduce((max, val) => max < val ? max = val : max, 0);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -37,9 +36,8 @@ Write a function named checkValues that takes in an object and a value and retur
 
 ------------------------------------------------------------------------------------------------ */
 
-const checkValues = (obj, value) => {
+const checkValues = (obj, value) => Object.values(obj).includes(value);
   // Solution code here...
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -60,9 +58,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
-  // Solution code here...
-};
+const updateNumbers = (obj) =>  Object.entries(obj).map((employeePhone) => employeePhone.join(': '));
 
 
 
@@ -115,14 +111,8 @@ const characters = [
   },
 ];
 
-const getHouses = (arr) => {
-  let houses = [];
-  // Solution code here...
-  for (let names of arr) {
-    houses.push(names.house)
-  }
-  return houses;
-};
+const getHouses = (arr) => arr.map(character => character.house);
+
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -137,14 +127,9 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-  let answer = false;
-  arr.forEach(profile => {
-    if (profile.name === character) {
-      answer = profile.children.length > 0;
-    } 
-  })
-  return answer;
+  let obj =arr.find(element => element.name === character);
+  return obj && obj.children && obj.children.length;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -285,7 +270,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
