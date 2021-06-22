@@ -50,3 +50,120 @@ def test_return_false_for_not_in_list():
     actual = not_in_ll.includes("not")
     expected = False
     assert actual == expected
+
+
+def test_string():
+    append_ll = LinkedList()
+    append_ll.insert("a")
+    append_ll.insert("b")
+    append_ll.insert("c")
+    append_ll.append("d")
+    actual = str(append_ll)
+
+    expected = "{'c'} -> {'b'} -> {'a'} -> {'d'} -> None"
+    assert actual == expected
+
+
+def test_append():
+    append_ll = LinkedList()
+    append_ll.insert("a")
+    append_ll.insert("b")
+    append_ll.insert("c")
+    append_ll.append("d")
+    actual = str(append_ll)
+
+    expected = "{'c'} -> {'b'} -> {'a'} -> {'d'} -> None"
+    assert actual == expected
+
+
+def test_append_multiple():
+    append_ll = LinkedList()
+    append_ll.insert("a")
+    append_ll.insert("b")
+    append_ll.insert("c")
+    append_ll.append("d")
+    append_ll.append("e")
+    actual = str(append_ll)
+
+    expected = "{'c'} -> {'b'} -> {'a'} -> {'d'} -> {'e'} -> None"
+    assert actual == expected
+
+
+def test_can_succesfully_add_a_node_to_the_end_of_the_list():
+    ll1 = LinkedList()
+    ll1.insert("a")
+    ll1.insert("b")
+    ll1.insert("c")
+    ll1.insert("d")
+    ll1.append("Z")
+    expected = ["d", "c", "b", "a", "Z"]
+    current = ll1.head
+    index = 0
+    while current is not None:
+        assert current.value == expected[index]
+        index += 1
+        current = current.next
+
+
+def test_can_sucessfully_add_multiple_nodes_to_the_end_of_list():
+    ll1 = LinkedList()
+    ll1.append("a").append("b").append("c").append("d")
+    expected = ["a", "b", "c", "d"]
+    current = ll1.head
+    index = 0
+    while current is not None:
+        assert current.value == expected[index]
+        index += 1
+        current = current.next
+
+
+def test_can_succesfully_insert_a_node_before_a_node_in_middle_of_list():
+    ll1 = LinkedList()
+    ll1.append("a").append("b").append("c").append("d")
+    ll1.insert_before("c", "Z")
+    expected = ["a", "b", "Z", "c", "d"]
+    current = ll1.head
+    index = 0
+    while current is not None:
+        assert current.value == expected[index]
+        index += 1
+        current = current.next
+
+
+def test_can_succesfully_insert_a_node_before_the_first_node_of_a_linked_list():
+    ll1 = LinkedList()
+    ll1.append("a").append("b").append("c").append("d")
+    ll1.insert_before("a", "Z")
+    expected = ["Z", "a", "b", "c", "d"]
+    current = ll1.head
+    index = 0
+    while current is not None:
+        assert current.value == expected[index]
+        index += 1
+        current = current.next
+
+
+def test_Can_successfully_insert_after_a_node_in_the_middle_of_the_linked_list():
+    ll1 = LinkedList()
+    ll1.append("a").append("b").append("c").append("d")
+    ll1.insert_after("b", "Z")
+    expected = ["a", "b", "Z", "c", "d"]
+    current = ll1.head
+    index = 0
+    while current is not None:
+        assert current.value == expected[index]
+        index += 1
+        current = current.next
+
+
+def test_Can_successfully_insert_a_node_after_the_last_node_of_the_linked_list():
+    ll1 = LinkedList()
+    ll1.append("a").append("b").append("c").append("d")
+    ll1.insert_after("d", "Z")
+    expected = ["a", "b", "c", "d", "Z"]
+    current = ll1.head
+    index = 0
+    while current is not None:
+        assert current.value == expected[index]
+        index += 1
+        current = current.next
