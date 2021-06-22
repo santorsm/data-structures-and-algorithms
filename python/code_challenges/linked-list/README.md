@@ -28,9 +28,27 @@ _UPDATE_
 
 ### White Board
 
+**`.append(value)`**
+
+input: `head -> [1] -> [3] -> [2] -> X`
+
+output: `head -> [1] -> [3] -> [2] -> [5] -> X`
+
 ![append](./assets/append.jpg)
 
+**`.insertBefore(value, newVal)`**
+
+input: `head -> [1] -> [3] -> [2] -> X`
+
+output: `head -> [1] -> [5] -> [3] -> [2] -> X`
+
 ![Insert Before](./assets/insert_before.jpg)
+
+**`.insertAfter(value, newVal)`**
+
+input: `head -> [1] -> [3] -> [2] -> X`
+
+output: `head -> [1] -> [3] -> [5] -> [2] -> X`
 
 ![Insert After](./assets/insert_after.jpg)
 
