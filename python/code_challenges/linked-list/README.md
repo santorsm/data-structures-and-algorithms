@@ -4,7 +4,9 @@
 
 -   The most defining feature of a Linked List is that each `Node` references the next `Node` in the link
 
-## Features
+## Code Challenge 05
+
+### Features
 
 -   [x] Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 
@@ -14,8 +16,34 @@
 
 -   [x] Define a method called `includes` which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
 
--   [ ] Define a method called `toString` (or `__str__` in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
+_UPDATE_
+
+-   [x] Define a method called `toString` (or `__str__` in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
 
     -   `"{ a } -> { b } -> { c } -> NULL"`
 
 -   As instructed, tests were written to prove the above functionality
+
+## Code Challenge 06
+
+### White Board
+
+![append](./assets/append.jpg)
+
+![Insert Before](./assets/insert_before.jpg)
+
+![Insert After](./assets/insert_after.jpg)
+
+### Features
+
+-   [x] `.append(value)` which adds a new node with the given `value` to the end of the list
+
+-   [x] `.insertBefore(value, newVal)` which add a new node with the given `newValue` immediately before the first `value` node
+
+-   [x] `.insertAfter(value, newVal)` which add a new node with the given `newValue` immediately after the first `value` node
+
+-   As instructed, tests were written to prove the above functionality
+
+### Documentation
+
+For Lab 06 I group coded with Anthony Williams and Davee Sok. Davee also helped me to define my `__str__` method
