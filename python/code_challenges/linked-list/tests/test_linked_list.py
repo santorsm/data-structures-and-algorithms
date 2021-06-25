@@ -167,3 +167,41 @@ def test_Can_successfully_insert_a_node_after_the_last_node_of_the_linked_list()
         assert current.value == expected[index]
         index += 1
         current = current.next
+
+
+def test_k_negative_integer():
+    ll1 = LinkedList()
+    ll1.append(1).append(2).append(3).append(4)
+    actual = ll1.kth_position(-1)
+    expected = "Not available for negative integers"
+    assert actual == expected
+
+
+def test_length_of_one():
+    ll1 = LinkedList()
+    ll1.insert(2)
+    actual = ll1.kth_position(0)
+    expected = "List only has one node - 1"
+    assert actual == expected
+
+
+def test_kth_value_at_0():
+    ll1 = LinkedList()
+    ll1.append(2)
+    ll1.append(8)
+    ll1.append(3)
+    ll1.append(1)
+    actual = ll1.kth_position(0)
+    expected = 2
+    assert actual == expected
+
+
+def test_kth_value_exceeds_length():
+    ll1 = LinkedList()
+    ll1.append(2)
+    ll1.append(8)
+    ll1.append(3)
+    ll1.append(1)
+    actual = ll1.kth_position(4)
+    expected = "Value 4 is beyond the length of the list"
+    assert actual == expected
