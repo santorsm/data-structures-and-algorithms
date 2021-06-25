@@ -62,6 +62,24 @@ output: `head -> [1] -> [3] -> [5] -> [2] -> X`
 
 -   As instructed, tests were written to prove the above functionality
 
+## Code Challenge 07
+
+-   [ ] kth from end
+        argument: a number, k, as a parameter
+
+-   [ ] Return the node’s value that is k places from the tail of the linked list
+
+-   [ ] You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges
+
+input - integer
+output - integer
+
+input: `head -> [1] -> [3] -> [8] -> [2] -> X`
+arg: `k`
+output: `2`
+
+work in progress. Put down some ideas as a starting point. Planning to revisit
+
 ### Documentation
 
 For Lab 06 I group coded with Anthony Williams and Davee Sok. Davee also helped me to define my `__str__` method

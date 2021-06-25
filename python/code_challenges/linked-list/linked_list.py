@@ -9,6 +9,11 @@ class LinkedList:
         self.head = None
         self.tail_node = None
 
+        if self.head == None:
+            self.length = 0
+        else:
+            self.length = 1
+
     def insert(self, value):
         node = Node(value)
 
@@ -100,3 +105,21 @@ class LinkedList:
             current = current.next
 
         print("Not in the list")
+
+    def kth_position(self, k):
+        if not self.length:
+            return "Not available for an empty linked list"
+
+        if self.length == 1:
+            return f"List only has one node - {self.head.value}"
+
+        elif k < 0:
+            return "Not available for negative integers"
+
+        elif k > self.length:
+            return f"Value {k} is beyond the length of the list"
+
+        place_holder = 0
+        search_place = self.length - k
+        current_position = self.head
+
