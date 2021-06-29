@@ -80,6 +80,36 @@ output: `2`
 
 work in progress. Put down some ideas as a starting point. Planning to revisit
 
-### Documentation
+## Code Challenge 08
 
-For Lab 06 I group coded with Anthony Williams and Davee Sok. Davee also helped me to define my `__str__` method
+-   [x] Write a function called zip lists
+
+-   [x] Arguments: 2 linked lists
+
+-   [x] Return: Linked List, zipped as noted below
+
+-   [x] Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list
+
+-   [x] Try and keep additional space down to O(1)
+
+-   [x] You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges
+
+![zip-link-lists](assets/zip-link-lists.png)
+
+## Documentation
+
+**Lab 06:** I group coded with Anthony Williams and Davee Sok. Davee also helped me to define my `__str__` method
+
+**Lab 07:**
+
+    [Length of Linked List](https://www.youtube.com/watch?v=sTsop8hf78c)
+
+    [Kth to last node](https://www.youtube.com/watch?v=Vta4ty-t1nY)
+
+    Collaborated with Kassie Bradshaw Daniel Dills And Michael Ryan
+
+**Lab 08:**
+
+    Collaborated with Glenn Clark
+
+    [Merge a linked list into another linked list at alternate positions](https://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/

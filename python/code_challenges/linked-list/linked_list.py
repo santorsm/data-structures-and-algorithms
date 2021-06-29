@@ -9,10 +9,20 @@ class LinkedList:
         self.head = None
         self.tail_node = None
 
-        if self.head == None:
-            self.length = 0
-        else:
-            self.length = 1
+    def length_iterative(self):
+
+        count = 0
+        cur_node = self.head
+
+        while cur_node:
+            count += 1
+            cur_node = cur_node.next
+        return count
+
+    def length_recursive(self, value):
+        if value is None:
+            return 0
+        return 1 + self.length_recursive(value.next)
 
     def insert(self, value):
         node = Node(value)
@@ -107,10 +117,14 @@ class LinkedList:
         print("Not in the list")
 
     def kth_position(self, k):
-        if not self.length:
+
+        # find the length of the
+        length = 0
+
+        if self.head is None:
             return "Not available for an empty linked list"
 
-        if self.length == 1:
+        if self.next is None:
             return f"List only has one node - {self.head.value}"
 
         elif k < 0:
@@ -120,6 +134,9 @@ class LinkedList:
             return f"Value {k} is beyond the length of the list"
 
         place_holder = 0
-        search_place = self.length - k
         current_position = self.head
+        search_place = self.length - k
 
+
+if __name__ == "__main__":
+    pass
