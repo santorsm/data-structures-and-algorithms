@@ -1,4 +1,5 @@
 from linked_list import Node, LinkedList
+from ll_zip import zip_list
 
 
 def test_import():
@@ -169,39 +170,62 @@ def test_Can_successfully_insert_a_node_after_the_last_node_of_the_linked_list()
         current = current.next
 
 
-def test_k_negative_integer():
-    ll1 = LinkedList()
-    ll1.append(1).append(2).append(3).append(4)
-    actual = ll1.kth_position(-1)
-    expected = "Not available for negative integers"
+def test_ll_length():
+    ll1_length = LinkedList()
+    ll1_length = ll1_length.append("a")
+    ll1_length = ll1_length.append("b")
+    ll1_length = ll1_length.append("c")
+    expected = 3
+    actual = ll1_length.length_iterative()
     assert actual == expected
 
 
-def test_length_of_one():
-    ll1 = LinkedList()
-    ll1.insert(2)
-    actual = ll1.kth_position(0)
-    expected = "List only has one node - 1"
-    assert actual == expected
+# def test_k_negative_integer():
+#     ll1 = LinkedList()
+#     ll1.append(1).append(2).append(3).append(4)
+#     actual = ll1.kth_position(-1)
+#     expected = "Not available for negative integers"
+#     assert actual == expected
 
 
-def test_kth_value_at_0():
-    ll1 = LinkedList()
-    ll1.append(2)
-    ll1.append(8)
-    ll1.append(3)
-    ll1.append(1)
-    actual = ll1.kth_position(0)
-    expected = 2
-    assert actual == expected
+# def test_length_of_one():
+#     ll1 = LinkedList()
+#     ll1.insert(2)
+#     actual = ll1.kth_position(0)
+#     expected = "List only has one node - 1"
+#     assert actual == expected
 
 
-def test_kth_value_exceeds_length():
-    ll1 = LinkedList()
-    ll1.append(2)
-    ll1.append(8)
-    ll1.append(3)
-    ll1.append(1)
-    actual = ll1.kth_position(4)
-    expected = "Value 4 is beyond the length of the list"
-    assert actual == expected
+# def test_kth_value_at_0():
+#     ll3_k = LinkedList()
+#     ll3_k = ll3_k.append(2)
+#     ll3_k = ll3_k.append(8)
+#     ll3_k = ll3_k.append(3)
+#     ll3_k = ll3_k.append(1)
+#     actual = ll3_k.kth_from_the_end(0)
+#     expected = 1
+#     assert actual == expected
+
+
+# def test_kth_value_exceeds_length():
+#     ll1 = LinkedList()
+#     ll1.append(2)
+#     ll1.append(8)
+#     ll1.append(3)
+#     ll1.append(1)
+#     actual = ll1.kth_position(4)
+#     expected = "Value 4 is beyond the length of the list"
+#     assert actual == expected
+
+
+def test_seventeen():
+    # new_list_one = LinkedList(Node(1,Node(3, Node(5))))
+    # new_list_two = LinkedList(Node(2,Node(4, Node(6))))
+    new_list_one = LinkedList()
+    new_list_two = LinkedList()
+    new_list_one.append(1).append(3).append(5)
+    new_list_two.append(2).append(4).append(6)
+    actual = zip_list(new_list_one, new_list_two)
+    # expected = "{1} ->{2} ->{3} ->{4} ->{5} ->{6} -> None "
+    expected = "{1} -> {2} -> {3} -> {4} -> {5} -> {6} -> None"
+    assert str(actual) == expected
